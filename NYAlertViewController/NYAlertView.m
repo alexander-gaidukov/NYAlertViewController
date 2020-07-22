@@ -242,6 +242,7 @@
         [self.alertBackgroundView setTranslatesAutoresizingMaskIntoConstraints:NO];
         self.alertBackgroundView.backgroundColor = [UIColor colorWithWhite:0.97f alpha:1.0f];
         self.alertBackgroundView.layer.cornerRadius = 6.0f;
+        self.alertBackgroundView.clipsToBounds = YES;
         [self addSubview:_alertBackgroundView];
         
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -348,7 +349,7 @@
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_actionButtonContainerView)]];
         
-        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[_titleLabel]-2-[_messageTextView][_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]-|"
+        [self.alertBackgroundView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-20-[_titleLabel]-30-[_messageTextView][_contentViewContainerView][_textFieldContainerView][_actionButtonContainerView]|"
                                                                                          options:0
                                                                                          metrics:nil
                                                                                            views:NSDictionaryOfVariableBindings(_titleLabel,
@@ -530,7 +531,7 @@
             
             [self.actionButtonContainerView addSubview:actionButton];
             
-            [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[actionButton]-|"
+            [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[actionButton]|"
                                                                                                    options:0
                                                                                                    metrics:nil
                                                                                                      views:NSDictionaryOfVariableBindings(actionButton)]];
@@ -541,7 +542,7 @@
                                                                                                      views:NSDictionaryOfVariableBindings(actionButton)]];
             
             if (i == 0) {
-                [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[actionButton]"
+                [self.actionButtonContainerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[actionButton]"
                                                                                                        options:0
                                                                                                        metrics:nil
                                                                                                          views:NSDictionaryOfVariableBindings(_contentViewContainerView, actionButton)]];
