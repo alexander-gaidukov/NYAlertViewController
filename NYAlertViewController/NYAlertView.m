@@ -247,7 +247,7 @@
         
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [self.titleLabel setTranslatesAutoresizingMaskIntoConstraints:NO];
-        self.titleLabel.numberOfLines = 2;
+        self.titleLabel.numberOfLines = 0;
         self.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
         self.titleLabel.textColor = [UIColor darkGrayColor];
